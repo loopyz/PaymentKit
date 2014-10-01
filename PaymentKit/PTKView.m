@@ -85,7 +85,12 @@ static NSString *const kPTKOldLocalizedStringsTableName = @"STPaymentLocalizable
     UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:self.bounds];
     backgroundImageView.image = [[UIImage imageNamed:@"textfield"]
             resizableImageWithCapInsets:UIEdgeInsetsMake(0, 8, 0, 8)];
-    [self addSubview:backgroundImageView];
+    // [self addSubview:backgroundImageView];
+    UIView *whiteBox = [[UIView alloc] initWithFrame:CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width - 20, self.bounds.size.height)];
+    whiteBox.backgroundColor = [UIColor whiteColor];
+    whiteBox.layer.borderColor = [UIColorFromRGB(0xE9E9E9) CGColor];
+    whiteBox.layer.borderWidth = 1.0f;
+    [self addSubview:whiteBox];
 
     self.innerView = [[UIView alloc] initWithFrame:CGRectMake(40, 12, self.frame.size.width - 40, 20)];
     self.innerView.clipsToBounds = YES;
